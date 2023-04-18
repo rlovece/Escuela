@@ -49,6 +49,6 @@ public class Materia {
         return "Materia: " + profe.getMateria() +
                 " Año: " + anio +
                 "\n Profesor:" + profe.getNombre() +
-                "\n Lista de alumnos \n" + listaEstudiantes;
+                "\n Lista de alumnos  " + listaEstudiantes;
     }
 }

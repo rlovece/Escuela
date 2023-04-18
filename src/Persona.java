@@ -1,4 +1,4 @@
-public class Persona {
+public class Persona implements Comparable<Persona>{
 
     protected String nombre;
     protected String dni;
@@ -36,6 +36,17 @@ public class Persona {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        if (this.edad < o.getEdad()){
+            return -1;
+        } else if (this.edad == o.getEdad()){
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
     ///endregion
