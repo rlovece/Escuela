@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
         Estudiante e1 = new Estudiante("Juan Perez", "0000001", 30, "Programación");
-        Estudiante e2 = new Estudiante("Calos Alvarez", "0000002", 26, "Arquitectura");
-        Estudiante e3 = new Estudiante("Ana Nuñez", "0000003", 28, "Programación");
+        Estudiante e2 = new Estudiante("Calos Alvarez", "0000003", 26, "Arquitectura");
+        Estudiante e3 = new Estudiante("Ana Nuñez", "0000002", 28, "Programación");
 
         Profesor p1 = new Profesor("Monica Martinez", "00000023", 51, "Matemática");
 
@@ -25,7 +22,25 @@ public class Main {
 
         Collections.sort(lista1);
 
-        Consola.escribir(" La lista de alumnos ordenada: " + lista1.toString());
+        Consola.escribir("\n\n ✔ La lista de alumnos ordenada: " + lista1.toString());
+
+        TreeMap<String, Estudiante> treeMapEstudiantes = new TreeMap<>();
+
+        for (Estudiante estudiante: lista1
+             ) {
+            treeMapEstudiantes.put(estudiante.getDni(), estudiante);
+        }
+
+        Consola.escribir("\n\n ✔ Arbol de estudiantes ordenado por DNI: " + treeMapEstudiantes);
+
+        Consola.escribir("\n\n ✔ De forma iterada");
+
+        for (Map.Entry<String, Estudiante> par: treeMapEstudiantes.entrySet()
+             ) {
+
+            Consola.escribir("\n DNI (clave): " + par.getKey());
+            Consola.escribir("Datos: " + par.getValue());
+        }
 
     }
 }

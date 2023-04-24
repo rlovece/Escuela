@@ -28,6 +28,6 @@ public class Estudiante extends Persona{
 
     @Override
     public String toString() {
-        return nombre + " de " + edad;
+        return nombre + " de " + edad + " años";
     }
 }
